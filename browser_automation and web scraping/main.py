@@ -1,4 +1,5 @@
 from selenium import webdriver
+import time
 
 def get_demo():
   options = webdriver.ChromeOptions()
@@ -10,14 +11,14 @@ def get_demo():
   options.add_argument("disable-blink-features=AutomationControlled")
 
   driver = webdriver.Chrome(options=options)
-  driver.get("http://codechef.com")
+  driver.get("https://www.codechef.com/login?destination=/")
   return driver
 
 
 def main():
     driver= get_demo()
-    element= driver.find_element(by="xpath",value="/html/body/div[1]/div/h1[1]")
-    return element.text
+    time.sleep(10)
+    driver.find_element(by="name", value="name").send_keys("arvindrk47@outlook.com")
 
 
 print(main())
