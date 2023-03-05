@@ -7,14 +7,16 @@ import ssl
 smtp_port =587
 smtp_server = "smtp.gmail.com"
 
-email_from = "arvindrk47@gmail.com"
-email_to = "arvindrk47@outlook.com"
+print("Hi, This script works on gmail webservice (which means sender mail id should be an gmail )")
 
-pswd = "ihghquhgftehdapf"
+email_from = input("Enter the send mail id: ")
+email_to = input("Enter the receiver email id:- ")
+
+pswd = input("Enter the password")
 
 
 
-message = "New Message"
+message = input("Enter the message ")
 
 context = ssl.create_default_context()
 
